@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+     <script src="https://kit.fontawesome.com/5a44f94317.js" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    
+
+
+
+    <script>
+   
+
+ //// Obje---------------------------------------------------------
+ function Student() {
+    this.name="ahmet";
+    this.age=15;
+ }
+
+
+
+  const child1 = new Student();
+  document.write(child1.name+child1.age+"<br>");
+
+
+
+
+
+
+// Consructorlar - yapıcı objeler --------------------------------------------
+       function Employe(name,age,job) {
+
+             this.name=name;
+             this.age=age;
+             this.job=job;   
+       }
+
+          
+       const worker = new Employe("enes ",23," yazılımcı");
+       document.write(worker.name + worker.age + worker.job+"<br>");
+        
+
+
+// Fonksiyon içeren consuctorlar------------------------------------------
+
+function Tazminat(isim,tecrube,maas) {
+
+    this.isim=isim;
+    this.tecrube=tecrube;
+    this.maas=maas;
+ 
+    this.hesapla = function() {
+      let sonuc = this.tecrube * this.maas;
+      document.write(this.isim + "hak ettiği tazminat:"+sonuc);
+    }
+
+    const work = new Tazminat("ahmet",5,7000);
+    work.hesapla(); // bu kod ile beraber ekrana "Ahmet in hak ettiği tazminat: 35000" yazması gerekiyordu çalışmadı.
+  
+  
+
+}
+
+
+
+</script>
+  </body>
