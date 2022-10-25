@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+  </head>
+  <body class="fs-1">
+    
+
+
+
+    <script>
+
+ 
+     function sum(a,b,c,d){
+       return  a+b+c+d;
+     }
+     document.write(sum(4,7,9,13));
+     document.write("<br>");
+     // normal şartlarda 4 değer isteyen fonksiyonun işlem yapması için 4 değer girilir. 
+     
+
+     // ihtiyaç duyulan diğer değerlerin objelerden alınması için CALL - APPLY - BIND kullanılıyor
+
+     const obj1 = {
+        x:10,
+        y:20
+     }
+     
+     function sum2(c,d){
+        // a ve b isimleri obje içinde tanımlanan isimler ile aynı olmalı
+        return this.a + this.b + c + d;       
+     }
+     //2 değer objeden alınıyor
+     //CALL----------------
+     document.write(sum2.call(obj1,4,6)); 
+
+     document.write("<br>");
+
+     //APPLY----------------
+     document.write(sum2.apply(obj1,[7,13])); 
+
+     document.write("<br>");
+
+     //BIND--------------------------------------------------------
+     function sum3(c,d){
+        return this.a + this.b + c + d;
+     }
+ 
+     // bınd ile fonksiyon kopyalayabiliyoruz. copyfunc1 fonksiyonu obj1 i de içine alarak sum3 fonksiyonunu kopyalıyor.
+     const copyfunc1 = sum3.bind(obj1);  
+
+     document.write(copyfunc1(14,16));  // obj1 in içindeki değelerde copyfunc1 içinde olduğundan 2 değer girmemiz yeterli.
+
+     document.write("<br>");
+
+
+
+
+    //ORNEK:
+
+    const worker1 = {
+        name:"ahmet",
+        age:27,
+        salary:8000
+        
+    }
+
+
+    function workers(name,age,salary) {
+        document.write("isim:" + this.name + " Yaş:" + this.age + " Maaş:" + this.salary)
+    }
+
+    workers.call(worker1);
+
+     
+
+</script>
+  </body>
+</html>

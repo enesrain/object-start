@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+     <script src="https://kit.fontawesome.com/5a44f94317.js" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    
+
+
+
+    <script>
+   
+
+//  //// Obje---------------------------------------------------------
+//  function Student() {
+//     this.name="ahmet";
+//     this.age=15;
+//  }
+
+
+
+//   const child1 = new Student();
+//   document.write(child1.name+child1.age+"<br>");
+
+
+
+
+
+
+// // Consructorlar - yapıcı objeler --------------------------------------------
+//        function Employe(name,age,job) {
+
+//              this.name=name;
+//              this.age=age;
+//              this.job=job;   
+//        }
+
+          
+//        const worker = new Employe("enes ",23," yazılımcı");
+//        document.write(worker.name + worker.age + worker.job+"<br>");
+        
+
+
+// // Fonksiyon içeren consuctorlar------------------------------------------
+
+// function Tazminat(isim,tecrube,maas) {
+
+//     this.isim=isim;
+//     this.tecrube=tecrube;
+//     this.maas=maas;
+ 
+//     this.hesapla = function() {
+//       let sonuc = this.tecrube * this.maas;
+//       document.write(this.isim + "hak ettiği tazminat:"+sonuc);
+//     }
+
+//     const work = new Tazminat("ahmet",5,7000);
+//     work.hesapla(); // bu kod ile beraber ekrana "Ahmet in hak ettiği tazminat: 35000" yazması gerekiyordu çalışmadı.
+  
+  
+
+// }
+
+
+
+// Prototype------------------------------------------------------------
+
+// function Human(name,age,salary,experience) {
+//     this.name=name;
+//     this.age=age;
+//     this.salary=salary;
+//     this.experience=experience;
+// }
+
+// // fonksiyonu tüm objelere tek tek yazmak yerine böyle tanımlıyoruz bellekte de daha az yer kaplamıyor
+// Human.prototype.show_worker = function(){
+//     console.log("isim:" + this.name + " yaş:" + this.age);
+// }
+
+// Human.prototype.tazminat = function(){
+//     let sonuc = this.salary * this.experience;
+//     console.log(this.name + "in hak kazandığı tazminat:"+sonuc + "TL");
+// }
+
+// const people1 = new Human("rafet",30,5000,5);
+
+// people1.show_worker();
+// people1.tazminat();
+
+
+
+
+
+// Create-----------------------------------------------------------------
+
+// const obj =  {
+//    name:"enes"
+// }
+
+// // başka objeyi içine almaya yarıyor
+// const zero = Object.create(obj);
+// zero.age=25;
+
+// console.log(zero);
+
+
+
+
+function Duyurular(){ // boş bi obje
+
+}
+
+Duyurular.prototype.duyuru1 = function(){  // objeye özellik ekleme
+    console.log("Askari ücrete zam yakında");
+} 
+
+Duyurular.prototype.duyuru2 = function() {
+    console.log("Emekli maaşı en düşük askari ücret kadar olucak");
+}
+
+function Kurumlar(ismi,isi){
+    this.ismi=ismi;
+    this.isi=isi;
+}
+
+Kurumlar.prototype = Object.create(Duyurular.prototype); 
+
+const kurum = new Kurumlar("Ekonomi Bakanlığı",1950);
+kurum.duyuru1();
+// "Kurumlar"    objesine "Duyurular nesnesinin prototype ı nı ekleme"
+
+
+
+
+
+
+
+</script>
+  </body>
