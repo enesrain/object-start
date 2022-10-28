@@ -15,8 +15,62 @@
 
     <script>
    
+   // LITERAL OBJE : objenin özellikleri hemen değer alır.------------------------------------------------------
+   const literal_obj = {
+     name : "enes",
+     surname: "yağmur",
+     age:23,
+     fonksiyon : function() {
+        return "isim:" + name + " " + " soyisim:" + surname;
+      }
+   }
+  
 
-//  //// Obje---------------------------------------------------------
+
+
+
+
+  //  CONSTRUCTOR (YAPICI OBJE) : parametreli ve özellikleri sonradan değer alıcak şekilde çalışır---------------------------------------
+
+  function constructor(name,surname,age) {
+    
+      this.name = name,
+      this.surname = surname,
+      this.age = age,
+
+      this.fonksiyon = function() {
+        return "isim:" + this.name + " " + " soyisim:" + this.surname;
+      }
+  }
+
+  const person = new constructor("ahmet","yılmaz",40);
+
+ 
+
+
+  // gösterim - çağırma şekilleri-----------------------------------------
+
+ console.log(person.name);
+ console.log(person["name"]);
+ console.log(person.fonksiyon());
+ console.log(person["fonksiyon"]());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  Object Literal :   obje özellikleri değerlerini hemen aldıysa lteral object dir---------------------------------------------------------
 //  function Student() {
 //     this.name="ahmet";
 //     this.age=15;
@@ -32,8 +86,9 @@
 
 
 
-// // Consructorlar - yapıcı objeler --------------------------------------------
+// // Consructorlar - yapıcı objeler  : özellikler karşılıklarını değerlerini hemen almazlar--------------------------------------------
 //        function Employe(name,age,job) {
+
 
 //              this.name=name;
 //              this.age=age;
@@ -46,7 +101,7 @@
         
 
 
-// // Fonksiyon içeren consuctorlar------------------------------------------
+// // Fonksiyon içeren consuctorlar örnek------------------------------------------
 
 // function Tazminat(isim,tecrube,maas) {
 
@@ -111,28 +166,28 @@
 
 
 
-function Duyurular(){ // boş bi obje
+// function Duyurular(){ // boş bi obje
 
-}
+// }
 
-Duyurular.prototype.duyuru1 = function(){  // objeye özellik ekleme
-    console.log("Askari ücrete zam yakında");
-} 
+// Duyurular.prototype.duyuru1 = function(){  // objeye özellik ekleme
+//     console.log("Askari ücrete zam yakında");
+// } 
 
-Duyurular.prototype.duyuru2 = function() {
-    console.log("Emekli maaşı en düşük askari ücret kadar olucak");
-}
+// Duyurular.prototype.duyuru2 = function() {
+//     console.log("Emekli maaşı en düşük askari ücret kadar olucak");
+// }
 
-function Kurumlar(ismi,isi){
-    this.ismi=ismi;
-    this.isi=isi;
-}
+// function Kurumlar(ismi,isi){
+//     this.ismi=ismi;
+//     this.isi=isi;
+// }
 
-Kurumlar.prototype = Object.create(Duyurular.prototype); 
+// Kurumlar.prototype = Object.create(Duyurular.prototype); 
 
-const kurum = new Kurumlar("Ekonomi Bakanlığı",1950);
-kurum.duyuru1();
-// "Kurumlar"    objesine "Duyurular nesnesinin prototype ı nı ekleme"
+// const kurum = new Kurumlar("Ekonomi Bakanlığı",1950);
+// kurum.duyuru1();
+// // "Kurumlar"    objesine "Duyurular nesnesinin prototype ı nı ekleme"
 
 
 
