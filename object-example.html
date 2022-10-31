@@ -186,6 +186,39 @@
 // gorev.show();
 
 
+// EXAMPLE6 soru-cevap------------------
+
+function Exam(question_write,a,b,answer){
+  this.question_write=question_write;
+  this.a = a;
+  this.b = b;
+  this.answer = answer;
+}
+
+
+// Sorunun bir araya getirilmesi - gösterilmesi ve cevabın kontrolü- ayrıca fonksiyonu harici olarak tanımladık- 
+Exam.prototype.question = function(){
+    let cevap = prompt("soru: " + this.question_write + " A-)"+this.a+"   B-)"+this.b);
+
+    if(cevap==this.answer){
+      alert("bildinnnnnnnnnnnnn");
+    }
+    else
+    alert("bilemedin doğru cevap: "+this.answer);
+  }
+
+
+
+
+//örnek sorunlar-örnek nesneler
+let sosyal = new Exam("türkiyenin başkent neresi?","adana","ankara","ankara");
+let mat = new Exam("100 / 2 = ? ","15","20","20");
+let ing = new Exam("He sleeps 5 hour, cümlesinin soru hali nasıl yazılır ?","Do he sleeps 5 hour","Does he sleeps 5 hour","Does he sleeps 5 hour");
+
+ing.question();
+
+
+
 
 
 
